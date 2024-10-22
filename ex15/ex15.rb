@@ -12,8 +12,13 @@ puts "I'll also ask you to type it again: "
 print prompt
 file_again = STDIN.gets.chomp()
 
-if File.exists?(file_again)
+if File.exist?(file_again)
   txt_again = File.open(file_again)
+  puts txt_again.read()
+  txt_again.close
+else
+  puts "Sorry pal file does not exist"
 end
 
-puts txt_again.read
+
+txt.close
